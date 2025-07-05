@@ -3,7 +3,7 @@
 $column: 86px;
 $gutter: (
     primary: 24px,
-    secondary: 8px
+    secondary: 8px,
 );
 
 // color
@@ -41,10 +41,19 @@ $padding-margin: (
     pb: padding-bottom,
     pl: padding-left,
     pr: padding-right,
+    p:  padding,
     mt: margin-top,
     mb: margin-bottom,
     ml: margin-left,
-    mr: margin-right
+    mr: margin-right,
+    m:  margin,
+);
+
+$padding-margin-xy:(
+    px,
+    py,
+    mx,
+    my,
 );
 
 // display

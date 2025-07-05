@@ -17,17 +17,30 @@
 @for $column from 1 through 12 {
     @for $i from 1 through $column {
         .col-#{$column}-#{$i} {
-            width: 100% / $column * $i; 
+            width: 100% / $column * $i;
         }
     }
 }
 
 // gutter
-// 這次打算用 gap 來處理 gutter
+// 原本打算用 gap 來處理 gutter
+// 但發現寬度會不對，可能要用公式：
+// (100% - (column - 1) * gutter ) / column
+// 找時間再來試試看
+// 所以還是採用類似 bootstrap 的方式設計
+// 但目前是 column 寬度和 gutter 間距分開寫
+// 拆得細一點也許比較可以因應不同的排版狀況
 
 @each $key , $value in $gutter{
-    .gap-#{$key} {
-        gap: $value;
+    .row-#{$key} {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: $value * -0.5;
+        margin-right: $value * -0.5;
+    }
+    .col-#{$key} {
+        padding-left: $value * 0.5;
+        padding-right: $value * 0.5;
     }
 }
 
@@ -46,17 +59,70 @@
     .bg-#{$key} {
         background-color: #{$value};
     }
+
+    // 按鈕背景色 + hover
+
+    .btn-bg-#{$key} {
+        background-color: #{$value};
+        &:hover{
+            background-color: darken($value, 15%);
+        }
+    }
 }
 
 // padding-margin
 
 @each $key, $value in $padding-margin{
-    @for $i from 1 through 16 {
+    @for $i from 1 through 64 {
         .#{$key}-#{$i} {
+            #{$value}: $i * 1px;
+        }
+    }
+}
 
-            // 一單位 4 px
+// 本來是打算 1 單位 4px
+// 但實際切版過程發現偶爾會有例外
+// 就改為 1 單位 4px
+// 另外增加 px py mx my
 
-            #{$value}: $i * 4px;
+@each $value in $padding-margin-xy{
+    @for $i from 1 through 64 {
+        
+        @if $value == "px" {
+
+            // 如果值為 px 生出以下樣式
+
+            .px-#{$i} {
+                padding-left: $i * 1px;
+                padding-right: $i * 1px;
+            }
+        }
+        @else if $value == "py"{
+
+            // 如果值為 py 生出以下樣式
+
+            .py-#{$i} {
+                padding-top: $i * 1px;
+                padding-bottom: $i * 1px;
+            }  
+        }
+        @else if $value == "mx" {
+
+            // 如果值為 mx 生出以下樣式
+
+            .mx-#{$i} {
+                margin-left: $i * 1px;
+                margin-right: $i * 1px;
+            }
+        }
+        @else if $value == "my"{
+
+            // 如果值為 my 生出以下樣式
+
+            .my-#{$i} {
+                margin-top: $i * 1px;
+                margin-bottom: $i * 1px;
+            }  
         }
     }
 }
