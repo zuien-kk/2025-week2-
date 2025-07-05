@@ -1,0 +1,87 @@
+// 引入變數檔案
+
+@import 'variables';
+
+// container
+
+@for $i from 1 through 12 {
+    .container-#{$i}{
+        width: $column * $i + map-get($gutter,primary) * ($i - 1);
+        margin: 0 auto;
+    }
+}
+
+// column
+// .col-(總共欄數)-(佔據欄數)
+
+@for $column from 1 through 12 {
+    @for $i from 1 through $column {
+        .col-#{$column}-#{$i} {
+            width: 100% / $column * $i; 
+        }
+    }
+}
+
+// gutter
+// 這次打算用 gap 來處理 gutter
+
+@each $key , $value in $gutter{
+    .gap-#{$key} {
+        gap: $value;
+    }
+}
+
+// color
+
+@each $key ,$value in $color {
+
+    // 文字顏色
+
+    .text-#{$key} {
+        color: #{$value};
+    }
+
+    // 背景顏色
+
+    .bg-#{$key} {
+        background-color: #{$value};
+    }
+}
+
+// padding-margin
+
+@each $key, $value in $padding-margin{
+    @for $i from 1 through 16 {
+        .#{$key}-#{$i} {
+
+            // 一單位 4 px
+
+            #{$value}: $i * 4px;
+        }
+    }
+}
+
+// display
+
+@each $value in $display {
+    .d-#{$value} {
+        display: #{$value};
+    }
+}
+
+// axis
+
+@each $key ,$value in $axis{
+    .justify-content-#{$key} {
+        justify-content: #{$value};
+    }
+
+    @if $key != "between" {
+
+        // 如果 $key 不為 between 才會產出樣式
+        
+        .align-items-#{$key} {
+            align-items: #{$value};
+        }       
+    }
+}

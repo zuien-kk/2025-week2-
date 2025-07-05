@@ -1,0 +1,66 @@
+// column-gutter
+
+$column: 86px;
+$gutter: (
+    primary: 24px,
+    secondary: 8px
+);
+
+// color
+
+$color: (
+
+    // Primary
+    // 主色用於產品畫面中的重點、CTA按鈕，需符合20%原則，避免過多主色分散注意
+
+    primary-100: #F5FEE7,
+    primary-200: #E8FEC5,
+    primary-300: #C0FA73,
+    primary-400: #57A203,
+    primary-500: #477A11,
+
+    // Neutral
+    // 用於文字、表格、分隔線等基礎介面元素，創造和諧的視覺體驗，不搶走主要內容的注意力
+
+    neutral-000: #FFFFFF,
+    neutral-100: #F8F9FA,
+    neutral-200: #E9ECEF,
+    neutral-300: #DEE2E6,
+    neutral-400: #CED4DA,
+    neutral-500: #ADB5BD,
+    neutral-600: #6C757D,
+    neutral-700: #495057,
+    neutral-800: #343A40,
+    neutral-900: #212529
+);
+
+// padding-margin
+
+$padding-margin: (
+    pt: padding-top,
+    pb: padding-bottom,
+    pl: padding-left,
+    pr: padding-right,
+    mt: margin-top,
+    mb: margin-bottom,
+    ml: margin-left,
+    mr: margin-right
+);
+
+// display
+
+$display: (
+    flex,
+    block,
+    inline-block,
+    none,
+);
+
+// axis
+
+$axis: (
+    start: flex-start,
+    center: center,
+    end: flex-end,
+    between: space-between,
+);

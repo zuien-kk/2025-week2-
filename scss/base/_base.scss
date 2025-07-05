@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Castoro:ital@0;1&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+// text-style
+// 參考設計稿命名
+
+.display-1{
+    font-size: 64px;
+}
+
+.display-2{
+    font-size: 48px;
+}
+
+.h1{
+    font-size: 40px;
+}
+
+.h2{
+    font-size: 32px;
+}
+
+.h3{
+    font-size: 28px;
+}
+
+.h4{
+    font-size: 24px;
+}
+
+.h5{
+    font-size: 20px;
+}
+
+.h6{
+    font-size: 16px;
+}
+
+.label-lg{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.label-md{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.label-sm{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paragraph-lg{
+    font-size: 20px;
+}
+
+.paragraph-md{
+    font-size: 16px;
+}
+
+.paragraph-sm{
+    font-size: 14px;
+}
+
+.paragraph-xs{
+    font-size: 12px;
+}
