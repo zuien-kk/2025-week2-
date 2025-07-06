@@ -75,19 +75,25 @@ a{
     font-size: 16px;
 }
 
+// 有一個地方需要用 h 系列標題標籤，但行高需要 1.5
+// 所以補上 line-height: 1.5;
+
 .label-lg{
     font-size: 20px;
     font-weight: 500;
+    line-height: 1.5;
 }
 
 .label-md{
     font-size: 16px;
     font-weight: 500;
+    line-height: 1.5;
 }
 
 .label-sm{
     font-size: 14px;
     font-weight: 500;
+    line-height: 1.5;
 }
 
 .paragraph-lg{
@@ -156,16 +162,38 @@ a{
     cursor: pointer;
     border-radius: 4px;
     border: none;
-    letter-spacing: 0.05rem;
+    letter-spacing: inherit;
     font-weight: 500;
     line-height: inherit;
     font-size: inherit;
     transition: 0.3s;
 }
 
+// 觀察設計稿一處按鈕左右有不明空隙，先用偽元素應急處理
+
+.btn-space::before,
+.btn-space::after{
+    content: "S";
+    color: transparent;
+}
+
 // text-align
 
 .text-center{
     text-align: center;
+}
+
+// 等比容器
+
+.w-64px{
+    width: 64px;
+}
+
+.w-40px{
+    width: 40px;
+}
+
+.aspect-1-1{
+    aspect-ratio: 1/1;
 }
 

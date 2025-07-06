@@ -31,22 +31,29 @@ $color: (
     neutral-600: #6C757D,
     neutral-700: #495057,
     neutral-800: #343A40,
-    neutral-900: #212529
+    neutral-900: #212529,
+
+    danger-100: #FCF1F1,
+    danger-200: #EBA7A7,
+    danger-300: #D74F4F,
 );
 
 // padding-margin
 
 $padding-margin: (
-    pt: padding-top,
+
+// 不要讓迴圈產生太多樣式，先註解掉用不到的方向
+
+    // pt: padding-top,
     pb: padding-bottom,
-    pl: padding-left,
+    // pl: padding-left,
     pr: padding-right,
     p:  padding,
-    mt: margin-top,
+    // mt: margin-top,
     mb: margin-bottom,
-    ml: margin-left,
+    // ml: margin-left,
     mr: margin-right,
-    m:  margin,
+    // m:  margin,
 );
 
 $padding-margin-xy:(

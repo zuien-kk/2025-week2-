@@ -42,6 +42,9 @@
         padding-left: $value * 0.5;
         padding-right: $value * 0.5;
     }
+    .gap-y-#{$key} {
+        gap: $value 0;
+    }
 }
 
 // color
@@ -68,6 +71,12 @@
             background-color: darken($value, 15%);
         }
     }
+
+    // 按鈕線條顏色
+
+    .btn-outline-#{$key} {
+        outline: 1px solid #{$value};
+    }
 }
 
 // padding-margin
@@ -82,7 +91,7 @@
 
 // 本來是打算 1 單位 4px
 // 但實際切版過程發現偶爾會有例外
-// 就改為 1 單位 4px
+// 就改為 1 單位 1px
 // 另外增加 px py mx my
 
 @each $value in $padding-margin-xy{
@@ -90,7 +99,7 @@
         
         @if $value == "px" {
 
-            // 如果值為 px 生出以下樣式
+            // 如果值為 px 產生出以下樣式
 
             .px-#{$i} {
                 padding-left: $i * 1px;
@@ -99,7 +108,7 @@
         }
         @else if $value == "py"{
 
-            // 如果值為 py 生出以下樣式
+            // 如果值為 py 產生出以下樣式
 
             .py-#{$i} {
                 padding-top: $i * 1px;
@@ -108,7 +117,7 @@
         }
         @else if $value == "mx" {
 
-            // 如果值為 mx 生出以下樣式
+            // 如果值為 mx 產生出以下樣式
 
             .mx-#{$i} {
                 margin-left: $i * 1px;
@@ -117,7 +126,7 @@
         }
         @else if $value == "my"{
 
-            // 如果值為 my 生出以下樣式
+            // 如果值為 my 產生出以下樣式
 
             .my-#{$i} {
                 margin-top: $i * 1px;
